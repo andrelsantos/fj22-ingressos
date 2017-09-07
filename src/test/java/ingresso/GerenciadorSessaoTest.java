@@ -1,21 +1,9 @@
 package ingresso;
 
-import java.time.Duration;
-import java.time.LocalTime;
-import java.util.Arrays;
-import java.util.List;
-
-import junit.framework.Assert;
-
-import org.junit.Test;
-
-import br.com.caelum.ingresso.model.Filme;
-import br.com.caelum.ingresso.model.GerenciadorSessao;
-import br.com.caelum.ingresso.model.Sala;
-import br.com.caelum.ingresso.model.Sessao;
 
 public class GerenciadorSessaoTest {
 
+	/*
 	@Test
 	public void deveRetornarFalseQuandoNaoCabe(){
 		LocalTime duasEMeia = LocalTime.of(14, 30);
@@ -49,4 +37,5 @@ public class GerenciadorSessaoTest {
 		
 		Assert.assertTrue(g.cabe(s1));
 	}
+	*/
 }
