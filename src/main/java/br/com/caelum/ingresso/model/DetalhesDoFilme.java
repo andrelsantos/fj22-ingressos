@@ -22,7 +22,7 @@ public class DetalhesDoFilme {
 	private String atores;
 	
 	@JsonProperty("Plot")
-	private String descricoes;
+	private String descricao;
 	
 	@JsonProperty("imdbRating")
 	private String avaliacao;
@@ -75,12 +75,12 @@ public class DetalhesDoFilme {
 		this.atores = atores;
 	}
 
-	public String getDescricoes() {
-		return descricoes;
+	public String getDescricao() {
+		return descricao;
 	}
 
-	public void setDescricoes(String descricoes) {
-		this.descricoes = descricoes;
+	public void setDescricao(String descricoes) {
+		this.descricao = descricoes;
 	}
 
 	public String getAvaliacao() {

@@ -6,6 +6,7 @@ import javax.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
 
 import br.com.caelum.ingresso.model.Lugar;
+import br.com.caelum.ingresso.model.Sessao;
 
 /**
  * Created by nando on 03/03/17.
@@ -19,4 +20,8 @@ public class LugarDao {
     public void save(Lugar lugar) {
         manager.persist(lugar);
     }
+    
+	public Lugar findOne(Integer id){
+		return manager.find(Lugar.class,id);
+	}
 }

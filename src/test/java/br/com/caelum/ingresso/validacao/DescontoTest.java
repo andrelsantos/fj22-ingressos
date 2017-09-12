@@ -10,17 +10,18 @@ import org.junit.Test;
 
 import br.com.caelum.ingresso.model.Filme;
 import br.com.caelum.ingresso.model.Ingresso;
+import br.com.caelum.ingresso.model.Lugar;
 import br.com.caelum.ingresso.model.Sala;
 import br.com.caelum.ingresso.model.Sessao;
-import br.com.caelum.ingresso.model.descontos.DescontoDeTrintaPorCentoParaBancos;
-import br.com.caelum.ingresso.model.descontos.DescontoEstudante;
-import br.com.caelum.ingresso.model.descontos.SemDesconto;
+import br.com.caelum.ingresso.model.TipoDeIngresso;
 
 public class DescontoTest {
 	
 	@Test
 	public void deveConcederDescontoDe30PorCentoParaIngressosDeClienteDeBanco(){
-		Ingresso ingresso = new Ingresso(criaSessao(),new DescontoDeTrintaPorCentoParaBancos());
+		Lugar lugar = new Lugar("A",1);
+		
+		Ingresso ingresso = new Ingresso(criaSessao(),TipoDeIngresso.BANCO, lugar);
 		
 		BigDecimal precoEsperado = new BigDecimal("22.75");
 		
@@ -29,7 +30,9 @@ public class DescontoTest {
 	
 	@Test
 	public void deveConcederDescontoDe50PorCentoParaIngressosDeEstudante(){
-		Ingresso ingresso = new Ingresso(criaSessao(),new DescontoEstudante());
+		Lugar lugar = new Lugar("A",1);
+		
+		Ingresso ingresso = new Ingresso(criaSessao(),TipoDeIngresso.ESTUDANTE, lugar);
 		
 		BigDecimal precoEsperado = new BigDecimal("16.25");
 		
@@ -38,7 +41,9 @@ public class DescontoTest {
 	
 	@Test
 	public void naoDeveConcederDescontoParaIngressoNormal(){
-		Ingresso ingresso = new Ingresso(criaSessao(),new SemDesconto());
+		Lugar lugar = new Lugar("A",1);
+		
+		Ingresso ingresso = new Ingresso(criaSessao(),TipoDeIngresso.INTEIRO, lugar);
 		
 		BigDecimal precoEsperado = new BigDecimal("32.5");
 		
