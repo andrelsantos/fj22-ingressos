@@ -33,8 +33,9 @@ public class CompraController {
     public ModelAndView enviarParaPagamento(CarrinhoForm carrinhoForm){
 
         ModelAndView modelAndView = new ModelAndView("redirect:/compra");
-
+        System.out.println("tamanho :" + carrinhoForm.getIngressos().size());
         carrinhoForm.toIngressos(sessaoDao, lugarDao).forEach(carrinho::add);
+        System.out.println("tamanho da lista:" + carrinho.getIngressos().size());
 
         return modelAndView;
     }

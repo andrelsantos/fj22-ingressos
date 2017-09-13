@@ -14,7 +14,7 @@ import br.com.caelum.ingresso.model.TipoDeIngresso;
 public class CarrinhoForm {
 	private List<Ingresso> ingressos = new ArrayList();
 	
-	public List<Ingresso> getIngresso(){
+	public List<Ingresso> getIngressos(){
 		return ingressos;
 	}
 	
