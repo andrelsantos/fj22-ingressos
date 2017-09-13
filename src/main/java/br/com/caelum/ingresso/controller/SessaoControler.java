@@ -90,7 +90,7 @@ public class SessaoControler {
 		modelAndView.addObject("sessao",sessao);
 		modelAndView.addObject("carrinho",carrinho);
 		modelAndView.addObject("imagemCapa",imagemCapa.orElse(new ImagemCapa()));
-		modelAndView.addObject("tipoDeIngressos",TipoDeIngresso.values());
+		modelAndView.addObject("tiposDeIngressos",TipoDeIngresso.values());
 		
 		return modelAndView;
 	}
